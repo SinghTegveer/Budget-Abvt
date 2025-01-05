@@ -1,0 +1,42 @@
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 12% 15% 73%;
+}
+
+.calendar-component {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgb(209, 181, 181);
+}
+
+.title-component-container {
+    background-image: url("../../public/Background-grid.png");
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 70% 30%;
+    color: brown;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.subtitle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: black;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}

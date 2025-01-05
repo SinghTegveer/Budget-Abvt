@@ -1,0 +1,22 @@
+<div class="calendar-item-container" (mouseover)="setHoverFlagTrue()" (mouseleave)="setHoverFlagFalse()"
+    [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
+    <div *ngIf="!hoverFlag"></div>
+    <div class="balance-container">
+      <h1>${{calendarBalance}}</h1>
+    </div>
+    <div class="action-container">
+      <div class="detail-button-container">
+        <div [ngStyle]="{'color': !hoverFlag ? 'rgb(244, 244, 244)': 'brown', 'cursor': !hoverFlag ? 'default': 'pointer'}"
+            (click)="getDetailEvent()">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+      </div>
+      <div class="add-button-container">
+        <div [ngStyle]="{'color': !hoverFlag ? 'rgb(244, 244, 244)': 'rgb(40, 169, 40)', 'cursor': !hoverFlag ? 'default': 'pointer'}"
+            (click)="addEvent()">
+            <i class="fa-regular fa-calendar-plus"></i>
+        </div>
+      </div>
+      <div class="date-container"><p>{{calendarDate}}</p></div>
+    </div>
+</div>

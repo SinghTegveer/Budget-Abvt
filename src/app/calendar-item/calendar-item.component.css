@@ -1,0 +1,52 @@
+:host {
+    display: flex;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: white;
+    border-radius: 5px;
+    border: solid 2px brown;
+}
+
+.calendar-item-container {
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+    display: grid;
+}
+
+
+.calendar-item-container:hover {
+    background-color: white;
+}
+
+.action-container {
+    display: grid;
+    grid-template-rows: 33% 33% 34%;
+}
+
+.balance-container {
+    transform: scaleY(1.4);
+    letter-spacing: -0.1rem;
+    font-family: monospace;
+}
+
+h1 {
+    font-weight: lighter;
+}
+
+
+.balance-container, .detail-button-container, .add-button-container, .date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+.detail-button-container {
+    color: brown;
+    cursor: pointer;
+}
+
+.add-button-container {
+    color: rgb(40, 169, 40);
+    cursor: pointer;
+}
