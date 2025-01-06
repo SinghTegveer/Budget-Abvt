@@ -1,6 +1,46 @@
 :host {
-    background-color: brown;
+    background-color: #c0a872;
     display: flex;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    justify-content: center;
+    align-items: center;
+    color: brown;
+}
+.summary-table-container, .day-summary-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-table, .daily-summary-table {
+    width: 90%;
+    background-color: #c0a872;
+    border: none;
+}
+
+.table-header-row {
+    background-color: #f1b769;
+    text-align: center;
+    padding: 5px;
+}
+
+td {
+    padding-left: 10px;
+    border: none;
+}
+
+.data-name {
+    background-color: #f1dab3;
+}
+
+.data-value {
+    background-color: antiquewhite;
 }

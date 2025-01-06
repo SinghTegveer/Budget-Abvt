@@ -1,21 +1,19 @@
 :host {
     display: flex;
-    width: 100% !important;
-    height: 100% !important;
-    background-color: white;
-    border-radius: 5px;
-    border: solid 2px brown;
+    width: 100%;
+    height: 100%;
 }
 
 .calendar-item-container {
     width: 100%;
-    background-color: rgb(244, 244, 244);
+    background-color: #d9d1bf;
     display: grid;
+    border: solid 3px black;
 }
 
 
 .calendar-item-container:hover {
-    background-color: white;
+    background-color: rgb(249, 235, 235);
 }
 
 .action-container {
@@ -27,6 +25,7 @@
     transform: scaleY(1.4);
     letter-spacing: -0.1rem;
     font-family: monospace;
+    font-weight: bolder;
 }
 
 h1 {
@@ -42,11 +41,9 @@ h1 {
 }
 
 .detail-button-container {
-    color: brown;
     cursor: pointer;
 }
 
 .add-button-container {
-    color: rgb(40, 169, 40);
     cursor: pointer;
 }
