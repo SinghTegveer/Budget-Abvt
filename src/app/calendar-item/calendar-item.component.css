@@ -23,7 +23,6 @@
 
 .balance-container {
     transform: scaleY(1.4);
-    letter-spacing: -0.1rem;
     font-family: monospace;
     font-weight: bolder;
 }
