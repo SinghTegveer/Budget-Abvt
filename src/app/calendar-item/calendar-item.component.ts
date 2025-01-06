@@ -49,13 +49,13 @@ export class CalendarItemComponent {
     this.calendarItemContainerStyles = {
       'grid-template-columns': this.getGridTemplateColumns(),
       'background-color': STYLE_COLOURS.calendar_date_background_color,
-      'border-color': STYLE_COLOURS.calendar_border_colour,
+      'border-color': STYLE_COLOURS.calendar_border,
     };
 
     this.calendarItemContainerStylesHover = {
       'grid-template-columns': this.getGridTemplateColumns(),
       'background-color': STYLE_COLOURS.calendar_date_background_color_hover,
-      'border-color': STYLE_COLOURS.calendar_border_colour,
+      'border-color': STYLE_COLOURS.calendar_border,
     };
   }
 

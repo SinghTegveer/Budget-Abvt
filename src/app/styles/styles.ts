@@ -49,5 +49,5 @@ export const STYLE_COLOURS = {
   calendar_date_colour: 'rgb(0, 0, 0)',
 
   // Colour for Calendar Border
-  calendar_border_colour: 'rgb(0, 0, 0)',
+  calendar_border: 'solid 3px rgb(0, 0, 0)',
 };

@@ -38,7 +38,7 @@ export class CalendarComponent {
     console.log('Calendar Component Ng On Init called');
     this.calendarGrid = {
       'grid-template-rows': this.getGridTemplateRows(),
-      'border-color': STYLE_COLOURS.calendar_border_colour,
+      'border-color': STYLE_COLOURS.calendar_border,
     };
   }
 
