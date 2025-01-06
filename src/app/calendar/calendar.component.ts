@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CalendarItemComponent } from '../calendar-item/calendar-item.component';
 import { CommonModule } from '@angular/common';
+import { STYLE_COLOURS } from '../styles/styles';
 
 @Component({
   selector: 'app-calendar',
@@ -12,6 +13,8 @@ import { CommonModule } from '@angular/common';
 export class CalendarComponent {
   testRows: any = [1, 1, 1, 1, 1, 1];
   testColumns: any = [1, 1, 1, 1, 1, 1, 1];
+  calendarGrid: any;
+
   testCalendarDateItems = [
     [5, 6, 7, 8, 9, 10, 11],
     [12, 13, 14, 15, 16, 17, 18],
@@ -33,6 +36,10 @@ export class CalendarComponent {
 
   ngOnInit() {
     console.log('Calendar Component Ng On Init called');
+    this.calendarGrid = {
+      'grid-template-rows': this.getGridTemplateRows(),
+      'border-color': STYLE_COLOURS.calendar_border_colour,
+    };
   }
 
   getGridTemplateRows() {

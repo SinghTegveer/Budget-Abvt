@@ -1,5 +1,5 @@
 <div class="calendar-container">
-  <div class="calendar-grid" [ngStyle]="{ 'grid-template-rows': getGridTemplateRows() }">
+  <div class="calendar-grid" [ngStyle]="calendarGrid">
     <div class="calendar-row" *ngFor="let r of testRows; let i = index" [ngStyle]="{ 'grid-template-columns': getGridTemplateColumns() }">
       <div class="calendar-column" *ngFor="let c of testColumns; let j = index">
         <app-calendar-item [calendarDate]="testCalendarDateItems[i][j]" [calendarBalance]="testCalendarBalanceItems[i][j]"></app-calendar-item>

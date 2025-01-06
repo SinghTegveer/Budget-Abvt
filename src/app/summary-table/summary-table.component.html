@@ -1,48 +1,48 @@
-<div class="container">
+<div class="container" [ngStyle]="containerColour">
   <div></div>
   <div class="summary-table-container">
     <table class="summary-table">
-      <tr class="table-header-row">
-        <td colspan="2">Your Summary</td>
+      <tr class="table-header-row" [ngStyle]="summaryTablesHeaderRow">
+        <td colspan="2">Total Summary</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">A</td>
-        <td class="data-value">1</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">A</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">1</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">B</td>
-        <td class="data-value">1</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">B</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">1</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">C</td>
-        <td class="data-value">3</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">C</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">3</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">D</td>
-        <td class="data-value">4</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">D</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">4</td>
       </tr>
     </table>
   </div>
   <div class="day-summary-container">
     <table class="daily-summary-table">
-      <tr class="table-header-row">
+      <tr class="table-header-row" [ngStyle]="summaryTablesHeaderRow">
         <td colspan="2">Daily Budget Summary</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">A</td>
-        <td class="data-value">1</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">A</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">1</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">B</td>
-        <td class="data-value">1</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">B</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">1</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">C</td>
-        <td class="data-value">3</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">C</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">3</td>
       </tr>
       <tr class="data-row">
-        <td class="data-name">D</td>
-        <td class="data-value">4</td>
+        <td class="data-name" [ngStyle]="summaryTablesTitleColumn">D</td>
+        <td class="data-value" [ngStyle]="summaryTablesDataColumn">4</td>
       </tr>
     </table>
   </div>

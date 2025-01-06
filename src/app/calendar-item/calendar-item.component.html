@@ -1,22 +1,21 @@
 <div class="calendar-item-container" (mouseover)="setHoverFlagTrue()" (mouseleave)="setHoverFlagFalse()"
-    [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
-    <div *ngIf="!hoverFlag"></div>
+    [ngStyle]="this.hoverFlag ? calendarItemContainerStylesHover : calendarItemContainerStyles">
     <div class="balance-container">
       <h1>${{calendarBalance}}</h1>
     </div>
     <div class="action-container">
       <div class="detail-button-container">
-        <div [ngStyle]="{'color': !hoverFlag ? '#ded2b5': 'black', 'cursor': !hoverFlag ? 'default': 'pointer'}"
+        <div [ngStyle]="this.hoverFlag ? detailButtonStylesHover : detailButtonStyles"
             (click)="getDetailEvent()">
             <i class="fa-solid fa-circle-info"></i>
         </div>
       </div>
       <div class="add-button-container">
-        <div [ngStyle]="{'color': !hoverFlag ? '#ded2b5': 'black', 'cursor': !hoverFlag ? 'default': 'pointer'}"
+        <div [ngStyle]="this.hoverFlag ? addButtonStylesHover : addButtonStyles"
             (click)="addEvent()">
             <i class="fa-regular fa-calendar-plus"></i>
         </div>
       </div>
-      <div class="date-container"><p>{{calendarDate}}</p></div>
+      <div class="date-container" [ngStyle]="calendarDateStyles"><p>{{calendarDate}}</p></div>
     </div>
 </div>

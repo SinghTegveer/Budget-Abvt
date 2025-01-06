@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     justify-items: center;
-    background-image: radial-gradient(rgb(241, 146, 146), #e1c487);
 }
 
 .title-component-container {
@@ -17,7 +16,6 @@
     display: grid;
     justify-content: center;
     grid-template-rows: 70% 30%;
-    color: white;
 }
 
 .title-container {
@@ -29,7 +27,6 @@
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    color: brown;
     font-weight: bolder;
 }
 
