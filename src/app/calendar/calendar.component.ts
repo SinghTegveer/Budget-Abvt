@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-calendar',
@@ -8,5 +9,41 @@ import { Component } from '@angular/core';
   styleUrl: './calendar.component.css'
 })
 export class CalendarComponent {
+  calendar_dates_lists: any = [];
+  selected_date: Date = new Date();
+  selected_month: number = 0;
+  selected_year: number = 0;
+  days_nums = [0, 1, 2, 3, 4, 5, 6];
+  days_strings = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+  ngOnInit() {
+    this.refreshDate(
+      this.selected_date.getMonth(),
+      this.selected_date.getFullYear()
+    );
+  }
+
+  // Get a list of calendar dates given the month and year
+  refreshDate(month: number, year: number) {
+    // Get first date to be displayed in the calendar
+    let temp_date = new Date(year, month, 1);
+    
+    while (temp_date.getDay() !== 0) {
+      temp_date.setDate(temp_date.getDate() - 1);
+    }
+
+    let current_week = [];
+      
+    // Add 6 weeks starting at the given date;
+    for (let i = 0; i < 42; i++) {
+      current_week.push(new Date(temp_date));
+      if (i % 7 === 6) {
+        this.calendar_dates_lists.push(current_week)
+        current_week = [];
+      }
+      temp_date.setDate(temp_date.getDate() + 1);
+    }
+
+    console.log("Calendar Dates Lists: ", this.calendar_dates_lists);
+  }
 }
