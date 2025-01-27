@@ -1,5 +1,6 @@
 class Account {
     id: number;
+    userId: number;
     type: number;
     description: string;
     balance: number;
@@ -12,6 +13,7 @@ class Account {
 
     constructor(object: any) {
         this.id = object.id ? object.id : null;
+        this.userId = object.userId ? object.userId : null;
         this.type = object.type ? object.type : null;
         this.description = object.description ? object.description : null;
         this.balance = object.balance ? object.balance : null;
@@ -28,6 +30,12 @@ class Account {
     }
     set_id(id: number) {
         this.id = id;
+    }
+    get_userId() {
+        return this.userId;
+    }
+    set_userId(userId: number) {
+        this.userId = userId;
     }
     get_type() {
         return this.type;

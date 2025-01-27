@@ -1,22 +1,22 @@
 <div class="calendar-container">
     <div class="month-row">
-        <div>
+        <div class="data-container">
             <i class="fa-solid fa-arrow-left"></i>
         </div>
-        <div>
+        <div class="data-container">
             {{ this.month_strings[this.selected_month] }}
         </div>
-        <div>
+        <div class="data-container">
             <i class="fa-solid fa-arrow-right"></i>
         </div>
     </div>
     <div class="week-row">
-        <div *ngFor="let day of days_strings">{{ day }}</div>
+        <div class="data-container" *ngFor="let day of days_strings">{{ day }}</div>
     </div>
     <div class="dates-div">
-        <div class="dates-row" *ngFor="let week of calendar_dates_lists">
-            <div class="calendar-item-date" *ngFor="let day of week">
-                <div class="calendar-item-container">{{day.getDate()}}</div>
+        <div class="dates-row" *ngFor="let week of calendar_dates_lists; let i = index">
+            <div class="dates-column" *ngFor="let day of week; let j = index">
+                <div class="calendar-item-container"><app-calendar-item [calendarItem]="getCalendarItem(i, j)"></app-calendar-item></div>
             </div>
         </div>
     </div>

@@ -1,1 +1,12 @@
-<p>calendar-item works!</p>
+<div class="calendar-item-container" (click)="displayTransactionData()">
+    <div></div>
+    <div class="balance-section">
+        <span class="balance">{{ this.calendarItem.displayBalance }}</span>
+    </div>
+    <div class="date-section">
+        <div></div>
+        <div class="date-container">
+            <p>{{ this.calendarItem.calendarDate.getDate() }}</p>
+        </div>
+    </div>
+</div>
