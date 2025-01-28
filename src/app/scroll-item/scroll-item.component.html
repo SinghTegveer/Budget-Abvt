@@ -1,1 +1,18 @@
-<p>scroll-item works!</p>
+<div class="scroll-item-container">
+  <div class="scroll-header-container">
+    <div class="scroll-item-title-container">
+        <h1>{{ scrollItemTitle }}</h1>
+    </div>
+    <div class="arrow-container">
+        <div *ngIf="!scrollItemExpand" (click)="updateScrollItemExpand()">
+            <i class="fa-solid fa-angles-down"></i>
+        </div>
+        <div *ngIf="scrollItemExpand" (click)="updateScrollItemExpand()">
+            <i class="fa-solid fa-angles-up"></i>
+        </div>
+    </div>
+  </div>
+  <div class="scroll-data-container" [@slideDown]="scrollItemExpand ? 'B' : 'A'">
+        <p>Testing Expanded: {{scrollItemExpand}}</p>
+  </div>
+</div>

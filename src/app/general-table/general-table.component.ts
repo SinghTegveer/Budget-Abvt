@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-general-table',
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './general-table.component.css'
 })
 export class GeneralTableComponent {
+
+  @Input() columnHeaderList: Array<string> = new Array();
+  @Input() dataList: Array<any> = new Array();
+  
+  ngOnInit() {
+    console.log("General Table Component");
+  }
 
 }
