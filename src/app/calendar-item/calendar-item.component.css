@@ -1,6 +1,10 @@
 :host {
     width: 100%;
     height: 100%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding-right: 2%;
+    padding-bottom: 2%;
 }
 
 .calendar-item-container {
@@ -18,6 +22,7 @@
 .date-section {
     display: grid;
     grid-template-rows: 70% 30%;
+    font-size: smaller;
 }
 .date-container {
     display: flex;

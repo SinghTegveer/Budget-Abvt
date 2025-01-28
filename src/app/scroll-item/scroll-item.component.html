@@ -13,6 +13,6 @@
     </div>
   </div>
   <div class="scroll-data-container" [@slideDown]="scrollItemExpand ? 'B' : 'A'">
-        <p>Testing Expanded: {{scrollItemExpand}}</p>
+        <ng-container *ngComponentOutlet="displayComponent"></ng-container>
   </div>
 </div>

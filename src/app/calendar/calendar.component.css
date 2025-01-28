@@ -8,7 +8,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 8% 8% 84%;
-    margin: 10px;
+    font-size: vh;
 }
 
 .month-row {
@@ -29,13 +29,19 @@
 .dates-row {
     display: grid;
     grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+    margin-bottom: 1vh;
 }
+
+.dates-column {
+    height: 100%;
+    margin-right: 0.5vw;
+}
+
 
 .data-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2%;
 }
 
 .calendar-item-container {
