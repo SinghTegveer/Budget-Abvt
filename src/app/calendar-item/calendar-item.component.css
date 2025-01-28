@@ -24,6 +24,7 @@
     grid-template-rows: 70% 30%;
     font-size: smaller;
 }
+
 .date-container {
     display: flex;
     align-items: center;

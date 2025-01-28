@@ -3,11 +3,11 @@
     <div class="scroll-item-title-container">
         <h1>{{ scrollItemTitle }}</h1>
     </div>
-    <div class="arrow-container">
-        <div *ngIf="!scrollItemExpand" (click)="updateScrollItemExpand()">
+    <div class="arrow-container" (click)="updateScrollItemExpand()">
+        <div *ngIf="!scrollItemExpand">
             <i class="fa-solid fa-angles-down"></i>
         </div>
-        <div *ngIf="scrollItemExpand" (click)="updateScrollItemExpand()">
+        <div *ngIf="scrollItemExpand">
             <i class="fa-solid fa-angles-up"></i>
         </div>
     </div>

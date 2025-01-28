@@ -19,6 +19,7 @@
 .week-row {
     display: grid;
     grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
+    margin-bottom: 1vh;
 }
 
 .dates-div {
@@ -42,6 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .calendar-item-container {
