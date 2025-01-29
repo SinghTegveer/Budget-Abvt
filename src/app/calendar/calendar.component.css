@@ -8,7 +8,7 @@
     height: 100%;
     display: grid;
     grid-template-rows: 8% 8% 84%;
-    font-size: vh;
+    font-size: smaller;
 }
 
 .month-row {
@@ -44,6 +44,20 @@
     align-items: center;
     justify-content: center;
     background-color: white;
+}
+
+.arrow-container, .month-container{
+   margin-right: 0.5vw;
+   border-radius: 5px;
+   margin-bottom: 0.4vh;
+   border: solid 1px brown;
+}
+
+.weekday-container {
+    margin-top: 0.5vh;
+    border-radius: 5px;
+    margin-right: 0.5vw;
+    border: solid 1px brown;
 }
 
 .calendar-item-container {

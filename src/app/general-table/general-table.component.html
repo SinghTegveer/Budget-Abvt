@@ -1,12 +1,13 @@
-<table class="generic-table">
-    <tr>
-        <th *ngFor="let header of columnHeaderList"></th>
-    </tr>
-    <tr *ngFor="let rowData of dataList">
-        <td>A</td>
-        <td>A</td>
-        <td>A</td>
-        <td>A</td>
-        <td>A</td>
-    </tr>
-</table>
+<div class="generic-table-container">
+    <div class="header-row" [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
+        <div *ngFor="let header of headers" class="header-container">
+            <div>{{ header }}</div>
+        </div>
+    </div>
+    <div *ngFor="let row of displayData" class="data-row" [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
+        <div *ngFor="let data of row; let i = index;" class="data-container">
+            <div *ngIf="formats[i] === 'Date'">{{ data | date }}</div>
+            <div *ngIf="formats[i] !== 'Date'">{{ data }}</div>
+        </div>
+    </div>
+</div>

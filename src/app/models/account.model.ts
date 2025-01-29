@@ -1,4 +1,4 @@
-class Account {
+export class Account {
     id: number;
     userId: number;
     type: number;

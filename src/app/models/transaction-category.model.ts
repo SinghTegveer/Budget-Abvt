@@ -1,4 +1,4 @@
-class TransactionCategory {
+export class TransactionCategory {
   id: number;
   category: string;
   subCategory: string;

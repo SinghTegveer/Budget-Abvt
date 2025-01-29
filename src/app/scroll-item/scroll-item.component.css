@@ -17,16 +17,17 @@
     display: grid;
     grid-template-columns: 90% 10%;
     border-bottom: solid 1px gray;
+    z-index: 1;
 }
 
 .scroll-data-container {
-    background-color: antiquewhite;
+    background-color: #d1d1d1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    height: 60vh;
+    z-index: 0.9;
 }
 
 .scroll-item-title-container {

@@ -204,7 +204,6 @@ export class CalendarComponent {
         }
       ], 
     };
-    this.calendar.set_calendarDates();
 
   }
 

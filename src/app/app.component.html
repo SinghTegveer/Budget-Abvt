@@ -1,19 +1,24 @@
 <div class="application-container">
-  <div class="title-section">Budget Buddy</div>
+  <div class="title-section">
+    <h1>Budget Buddy</h1>
+  </div>
   <div class="scroll-items-container">
     <div class="scroll-item-container">
       <app-scroll-item
         [scrollItemTitle]="accountsScrollTitle"
+        [scrollItemExpand]="false"
       ></app-scroll-item>
     </div>
     <div class="scroll-item-container">
       <app-scroll-item
         [scrollItemTitle]="budgetCalendarScrollTitle"
+        [scrollItemExpand]="true"
       ></app-scroll-item>
     </div>
     <div class="scroll-item-container">
       <app-scroll-item
         [scrollItemTitle]="transactionsScrollTitle"
+        [scrollItemExpand]="false"
       ></app-scroll-item>
     </div>
   </div>

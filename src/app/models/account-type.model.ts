@@ -1,4 +1,4 @@
-class AccountType {
+export class AccountType {
     id: number;
     category: string;
     subCategory: string;

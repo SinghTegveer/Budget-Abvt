@@ -1,0 +1,49 @@
+:host {
+    background-color: white;
+    font-size: smaller;
+    margin: 1px;
+}
+
+.generic-table-container {
+    margin: 1px;
+}
+
+.header-container {
+    display: flex;
+    margin: 0;
+    background-color: brown;
+    color: white;
+    padding: 8px;
+}
+
+.data-container {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+}
+
+.header-row {
+    display: grid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.header-container:first-child {
+    border-top-left-radius: 10px;
+}
+.header-container:last-child {
+    border-top-right-radius: 10px;
+}
+
+.data-row {
+    display: grid;
+    background-color: white;
+    border-bottom: solid 1pt gray;
+    border-left: solid 1pt gray;
+    border-right: solid 1pt gray;
+}
+
+.data-row:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

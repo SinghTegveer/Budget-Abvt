@@ -1,8 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarComponent } from '../calendar/calendar.component';
+import { AccountsComponent } from '../accounts/accounts.component';
 
 @Component({
   selector: 'app-scroll-item',
@@ -21,7 +21,8 @@ import { CalendarComponent } from '../calendar/calendar.component';
       state('B', style({
           height: "*",
           opacity: 1,
-          padding: '3%'
+          padding: '3%',
+          borderBottom: 'solid 1pt grey'
         })
       ),
       transition('A <=> B', [animate('500ms')]),
@@ -31,11 +32,11 @@ import { CalendarComponent } from '../calendar/calendar.component';
 export class ScrollItemComponent {
   @Input() scrollItemTitle: any;
   displayComponent: any;
-  scrollItemExpand: Boolean = false;
+  @Input() scrollItemExpand: any;
 
   ngOnInit() {
     if (this.scrollItemTitle === 'Accounts') {
-      this.displayComponent = CalendarComponent;
+      this.displayComponent = AccountsComponent;
     } else if (this.scrollItemTitle === 'Transactions') {
       this.displayComponent = CalendarComponent;
     } else if (this.scrollItemTitle == 'Budgetting Calendar') {

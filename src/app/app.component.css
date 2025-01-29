@@ -5,6 +5,17 @@
     grid-template-rows: 10% 90%;
 }
 
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('../../public/Background-grid-no-print.png'); */
+    background-color: white;
+    color: black;
+    font-size: x-large;
+    border-bottom: solid 1pt grey;
+}
+
 .scroll-item-container {
     display: flex;
     justify-content: center;
