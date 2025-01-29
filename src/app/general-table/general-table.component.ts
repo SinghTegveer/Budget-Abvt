@@ -16,16 +16,17 @@ export class GeneralTableComponent {
   @Input() addApiUrl: string = ''; // URL for Add API
   @Input() deleteApiUrl: string = ''; // URL for Delete API - If null add extra column
   @Input() updateApiUrl: string = ''; // URL for Put call
-  @Input() scrollData: boolean = false; // Allow for table scrolls
+  @Input() scrollDataVertical: boolean = false; // Allow for table scrolls
+  @Input() scrollDataHorizontal: boolean = false; // Allow for table scrolls
 
   ngOnInit() {
     console.log('General Table Component');
   }
 
   getGridTemplateColumns() {
-    let updated_widths = this.widths.map(v => `${v}%`);
+    let updated_widths = this.widths.map((v) => `${v}%`);
     let result = updated_widths.join(' ');
-    console.log("Grid Template Columns: ", result);    
+    console.log('Grid Template Columns: ', result);
     return result;
   }
 }

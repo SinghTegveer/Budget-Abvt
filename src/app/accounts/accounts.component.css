@@ -1,8 +1,9 @@
 :host {
     margin: 2px;
-    z-index: 0.95;
+    height: 100%;
 }
 
 .accounts-container {
     margin: 2px;
+    height: 100%;
 }

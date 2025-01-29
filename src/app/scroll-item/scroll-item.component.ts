@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { AccountsComponent } from '../accounts/accounts.component';
+import { TransactionDetailComponent } from '../transaction-detail/transaction-detail.component';
 
 @Component({
   selector: 'app-scroll-item',
@@ -38,7 +39,7 @@ export class ScrollItemComponent {
     if (this.scrollItemTitle === 'Accounts') {
       this.displayComponent = AccountsComponent;
     } else if (this.scrollItemTitle === 'Transactions') {
-      this.displayComponent = CalendarComponent;
+      this.displayComponent = TransactionDetailComponent;
     } else if (this.scrollItemTitle == 'Budgetting Calendar') {
       this.displayComponent = CalendarComponent;
     }
