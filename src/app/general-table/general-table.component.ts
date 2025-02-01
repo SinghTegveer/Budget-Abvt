@@ -18,6 +18,8 @@ export class GeneralTableComponent {
   @Input() updateApiUrl: string = ''; // URL for Put call
   @Input() scrollDataVertical: boolean = false; // Allow for table scrolls
   @Input() scrollDataHorizontal: boolean = false; // Allow for table scrolls
+  @Input() updatesAllowed: Array<boolean> = new Array(); // For columns that are available for updates
+  rowUpdate: Array<boolean> = new Array(this.displayData.length).fill(false); // For row updates and styling
 
   ngOnInit() {
     console.log('General Table Component');
@@ -26,7 +28,16 @@ export class GeneralTableComponent {
   getGridTemplateColumns() {
     let updated_widths = this.widths.map((v) => `${v}%`);
     let result = updated_widths.join(' ');
-    console.log('Grid Template Columns: ', result);
     return result;
+  }
+
+  updatedSelected(i: number) {
+    console.log('Update option for Inputs selected');
+    this.rowUpdate[i] = true;
+  }
+
+  callUpdateApi(i: number) {
+    console.log('Update API called');
+    this.rowUpdate[i] = false;
   }
 }

@@ -17,11 +17,13 @@ export class AccountsComponent {
   formats: Array<any> = new Array();
   displayData: Array<any> = new Array();
   accountsList: Array<Account> = new Array();
+  updatesAllowed: Array<boolean> = new Array();
 
   ngOnInit() {
-    this.headers = ["Type", "Description", "Balance", "Available Credit", "Statement Due Date", "Credit Limit", "Bank", "RoR", "Additional Comments"]
-    this.widths = [10, 22, 9, 9, 10, 8, 6, 6, 20];
-    this.formats = ["String", "String", "Number", "Number", "Date", "Number", "String", "Number", "String"];
+    this.headers = ["Type", "Description", "Balance", "Available Credit", "Statement Due Date", "Credit Limit", "Bank", "RoR", "Additional Comments", "Action"]
+    this.widths = [10, 22, 9, 9, 8, 8, 5, 5, 18, 6];
+    this.formats = ["String", "String", "Number", "Number", "Date", "Number", "String", "Number", "String", "Action"];
+    this.updatesAllowed = [false, true, false, false, true, true, true, true, true, true];
     let account1 = {
       id: 1,
       userId: 2,
@@ -54,9 +56,9 @@ export class AccountsComponent {
       type: "Credit Card",
       description: "Credit Card ABC",
       balance: 2300,
-      availableCredit: 10000,
+      availableCredit: 9700,
       statementDueDate: new Date(2025, 6, 1),
-      creditLimit: null,
+      creditLimit: 12000,
       bank: "PQR",
       rateOfReturn: null,
       additionalComments: "NA",
@@ -72,6 +74,7 @@ export class AccountsComponent {
         account1.bank,
         account1.rateOfReturn,
         account1.additionalComments,
+        null
       ],
       [
         account2.type,
@@ -83,6 +86,7 @@ export class AccountsComponent {
         account2.bank,
         account2.rateOfReturn,
         account2.additionalComments,
+        null
       ],
       [
         account3.type,
@@ -94,6 +98,7 @@ export class AccountsComponent {
         account3.bank,
         account3.rateOfReturn,
         account3.additionalComments,
+        null
       ],
     ];
     this.accountsList = [new Account(account1), new Account(account2), new Account(account3)];

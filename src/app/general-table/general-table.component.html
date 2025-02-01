@@ -4,10 +4,26 @@
             <div>{{ header }}</div>
         </div>
     </div>
-    <div *ngFor="let row of displayData" class="data-row" [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
-        <div *ngFor="let data of row; let i = index;" class="data-container">
-            <div *ngIf="formats[i] === 'Date'">{{ data | date }}</div>
-            <div *ngIf="formats[i] !== 'Date'">{{ data }}</div>
+    <div *ngFor="let row of displayData; let i = index;" class="data-row" [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
+        <div *ngFor="let data of row; let j = index;" class="data-container">
+            <div class="value-container" *ngIf="formats[j] === 'Date'">
+                {{ data | date }}
+            </div>
+            <div class="value-container" *ngIf="formats[j] === 'Number'">
+                {{ data }}
+            </div>
+            <div class="value-container" *ngIf="formats[j] === 'String'">
+                {{ data }}
+            </div>
+            <div class="action-button-container" *ngIf="formats[j] === 'Action'">
+                <div class="edit-check-button">
+                    <i class="fa-solid fa-pen-to-square edit" *ngIf="!rowUpdate[i]" (click)="updatedSelected(i)"></i>
+                    <i class="fa-solid fa-circle-check check" *ngIf="rowUpdate[i]" (click)="callUpdateApi(i)"></i>
+                </div>
+                <div class="delete-button">
+                    <i class="fa-solid fa-trash delete"></i>
+                </div>
+            </div>
         </div>
     </div>
 </div>
