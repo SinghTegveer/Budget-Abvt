@@ -4,16 +4,34 @@
             <div>{{ header }}</div>
         </div>
     </div>
-    <div *ngFor="let row of displayData; let i = index;" class="data-row" [ngStyle]="{'grid-template-columns': getGridTemplateColumns()}">
+    <div *ngFor="let row of displayData; let i = index;" class="data-row" [ngStyle]="{'grid-template-columns': getGridTemplateColumns(), 'background-color': getRowBackgroundColor(i)}">
         <div *ngFor="let data of row; let j = index;" class="data-container">
-            <div class="value-container" *ngIf="formats[j] === 'Date'">
-                {{ data | date }}
+            <div class="value-container" 
+                [ngClass]="{'value-container-pointer': rowUpdate[i]}" 
+                *ngIf="formats[j] === 'Date' && !columnUpdate[i][j]"
+                (click)="setTrueColumnDataFlag(i, j)">
+                {{ data | date | default: '-'}}
             </div>
-            <div class="value-container" *ngIf="formats[j] === 'Number'">
-                {{ data }}
+            <div class="value-container" *ngIf="formats[j] === 'Date' && columnUpdate[i][j]">
+                <input type="date" class="data-input"/>
             </div>
-            <div class="value-container" *ngIf="formats[j] === 'String'">
-                {{ data }}
+            <div class="value-container" 
+                [ngClass]="{'value-container-pointer': rowUpdate[i]}" 
+                *ngIf="formats[j] === 'Number' && !columnUpdate[i][j]"
+                (click)="setTrueColumnDataFlag(i, j)">
+                {{ data | default: '-'}}
+            </div>
+            <div class="value-container" *ngIf="formats[j] === 'Number' && columnUpdate[i][j]">
+                <input type="number" class="data-input"/>
+            </div>
+            <div class="value-container" 
+                [ngClass]="{'value-container-pointer': rowUpdate[i]}" 
+                *ngIf="formats[j] === 'String' && !columnUpdate[i][j]"
+                (click)="setTrueColumnDataFlag(i, j)">
+                {{ data | default: '-'}}
+            </div>
+            <div class="value-container" *ngIf="formats[j] === 'String' && columnUpdate[i][j]">
+                <input type="text" class="data-input">
             </div>
             <div class="action-button-container" *ngIf="formats[j] === 'Action'">
                 <div class="edit-check-button">
@@ -21,7 +39,7 @@
                     <i class="fa-solid fa-circle-check check" *ngIf="rowUpdate[i]" (click)="callUpdateApi(i)"></i>
                 </div>
                 <div class="delete-button">
-                    <i class="fa-solid fa-trash delete"></i>
+                    <i class="fa-solid fa-trash delete" (click)="deleteRow(i)"></i>
                 </div>
             </div>
         </div>
