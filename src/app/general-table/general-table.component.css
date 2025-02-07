@@ -44,10 +44,10 @@
 .action-button-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
 }
 
-.edit-check-button, .delete-button {
+.edit-check-button, .delete-button, .add-button {
     display: grid;
     justify-content: center;
     align-items: center;
@@ -59,6 +59,10 @@
     color: rgb(36, 36, 163);
 }
 .check {
+    color: green;
+}
+
+.add {
     color: green;
 }
 
@@ -77,6 +81,11 @@
 }
 .header-container:last-child {
     border-top-right-radius: 10px;
+}
+
+.select-dropdown {
+    width: 95%;
+    padding: 3px;
 }
 
 .data-row {

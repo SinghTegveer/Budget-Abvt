@@ -12,7 +12,7 @@
                 (click)="setTrueColumnDataFlag(i, j)">
                 {{ data | date | default: '-'}}
             </div>
-            <div class="value-container" *ngIf="formats[j] === 'Date' && columnUpdate[i][j]">
+            <div class="value-container" *ngIf="formats[j] === 'Date' && columnUpdate[i][j] && dropdowns[j] === null">
                 <input type="date" class="data-input"/>
             </div>
             <div class="value-container" 
@@ -21,7 +21,7 @@
                 (click)="setTrueColumnDataFlag(i, j)">
                 {{ data | default: '-'}}
             </div>
-            <div class="value-container" *ngIf="formats[j] === 'Number' && columnUpdate[i][j]">
+            <div class="value-container" *ngIf="formats[j] === 'Number' && columnUpdate[i][j] && dropdowns[j] === null">
                 <input type="number" class="data-input"/>
             </div>
             <div class="value-container" 
@@ -30,13 +30,23 @@
                 (click)="setTrueColumnDataFlag(i, j)">
                 {{ data | default: '-'}}
             </div>
-            <div class="value-container" *ngIf="formats[j] === 'String' && columnUpdate[i][j]">
+            <!-- For String inputs that are customized -->
+            <div class="value-container" *ngIf="formats[j] === 'String' && columnUpdate[i][j] && dropdowns[j] === null">
                 <input type="text" class="data-input">
+            </div>
+            <!-- For inputs that need to be chosen out of dropdown -->
+            <div class="value-container" *ngIf="columnUpdate[i][j] && dropdowns[j] !== null">
+                <select class="select-dropdown">
+                    <option *ngFor="let option of dropdowns[j]" value="option">{{ option }}</option>
+                </select>
             </div>
             <div class="action-button-container" *ngIf="formats[j] === 'Action'">
                 <div class="edit-check-button">
                     <i class="fa-solid fa-pen-to-square edit" *ngIf="!rowUpdate[i]" (click)="updatedSelected(i)"></i>
                     <i class="fa-solid fa-circle-check check" *ngIf="rowUpdate[i]" (click)="callUpdateApi(i)"></i>
+                </div>
+                <div class="add-button">
+                    <i class="fa-solid fa-circle-plus add" (click)="addNewValueDropdown()"></i>
                 </div>
                 <div class="delete-button">
                     <i class="fa-solid fa-trash delete" (click)="deleteRow(i)"></i>

@@ -18,12 +18,18 @@ export class AccountsComponent {
   displayData: Array<any> = new Array();
   accountsList: Array<Account> = new Array();
   updatesAllowed: Array<boolean> = new Array();
+  dropdowns: Array<any> = new Array();
 
   ngOnInit() {
     this.headers = ["Type", "Description", "Balance", "Available Credit", "Statement Due Date", "Credit Limit", "Bank", "RoR", "Additional Comments", "Action"]
-    this.widths = [10, 22, 9, 9, 8, 8, 5, 5, 18, 6];
+    this.widths = [10, 22, 9, 9, 8, 8, 5, 5, 14, 10];
     this.formats = ["String", "String", "Number", "Number", "Date", "Number", "String", "Number", "String", "Action"];
     this.updatesAllowed = [false, true, false, false, true, true, true, true, true, true];
+    let accountsType = [
+      'Investment - TFSA: Wealthsimple',
+      'Credit Card: BankA',
+    ];
+    this.dropdowns = [accountsType, null, null, null, null, null, null, null, null, null]
     let account1 = {
       id: 1,
       userId: 2,

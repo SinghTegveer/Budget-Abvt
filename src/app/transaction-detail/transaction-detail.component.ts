@@ -18,10 +18,15 @@ export class TransactionDetailComponent {
 
   ngOnInit() {
     this.headers = ["Description", "Account Type", "Transaction Category", "Amount", "Date", "Additional Comments", "Added", "Realized", "Frequency", "Action"];
-    this.widths = [17, 14, 14, 8, 8, 15, 5, 5, 8, 6];
+    this.widths = [17, 14, 14, 8, 8, 11, 5, 5, 8, 10];
     this.formats = ["String", "String", "String", "Number", "Date", "String", "Boolean", "Boolean", "String", "Action"];
-    this.dropdowns = [null, [], [], null, null, null, [], [], [], null]
-    this.updatesAllowed = [true, true, true, true, true, true, true, true, true, true];
+    // Returned by the API as the accounts user has
+    let accountsType = ["Investment - TFSA: Wealthsimple", "Credit Card: BankA"];
+    let transactionsType = ["Income - Pay", "Income - Other", "Investment - A", "Investment - B", "Investment - C", "Savings", "Essential", "Periodic Payments", "Non-essential"];
+    let frequencyDropdown = ["Once", "Weekly", "Biweekly", "Monthly"];
+    let booleanDropdown = ["Yes", "No"]
+    this.dropdowns = [null, accountsType, transactionsType, null, null, null, booleanDropdown, booleanDropdown, frequencyDropdown, null];
+    this.updatesAllowed = [true, false, true, true, true, true, true, true, true, true];
     this.displayData = [
       [
         'Walmart Groceries',
@@ -50,7 +55,7 @@ export class TransactionDetailComponent {
       [
         'Investment',
         'Investment - TFSA',
-        'INvestment - TFSA',
+        'Investment - TFSA',
         2000.00,
         new Date(2025, 2, 7),
         '',
