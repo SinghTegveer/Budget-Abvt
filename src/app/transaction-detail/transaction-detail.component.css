@@ -1,0 +1,10 @@
+:host {
+    margin: 2px;
+    height: 100%;
+    width: 100%;
+}
+
+.transactions-container {
+    margin: 2px;
+    height: 100%;
+}

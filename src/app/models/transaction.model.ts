@@ -1,8 +1,8 @@
 class Transaction {
   id: number;
-  account: number;
+  account: string;
   description: string;
-  category: number;
+  category: string;
   amount: number;
   transactionDate: Date;
   additionalComments: string;
@@ -36,7 +36,7 @@ class Transaction {
   get_account() {
     return this.account;
   }
-  set_account(account: number) {
+  set_account(account: string) {
     this.account = account;
   }
   get_description() {
@@ -48,7 +48,7 @@ class Transaction {
   get_category() {
     return this.category;
   }
-  set_category(category: number) {
+  set_category(category: string) {
     this.category = category;
   }
   get_amount() {
