@@ -15,25 +15,23 @@ import { TransactionDetailComponent } from '../transaction-detail/transaction-de
     trigger('slideDown', [
       state('A', style({
           height: 0,
-          opacity: 0,
           padding: 0,
         })
       ),
       state('B', style({
           height: "*",
-          opacity: 1,
           padding: '3%',
-          borderBottom: 'solid 1pt grey'
+          borderBottom: 'solid 1pt grey',
         })
       ),
-      transition('A <=> B', [animate('500ms')]),
+      transition('A <=> B', [animate('1s linear')]),
     ]),
   ],
 })
 export class ScrollItemComponent {
   @Input() scrollItemTitle: any;
   displayComponent: any;
-  @Input() scrollItemExpand: any;
+  @Input() scrollItemExpand: boolean = false;
 
   ngOnInit() {
     if (this.scrollItemTitle === 'Accounts') {
@@ -46,6 +44,7 @@ export class ScrollItemComponent {
   }
 
   updateScrollItemExpand() {
+    console.log("Scroll Item Button clicked");
     this.scrollItemExpand = !this.scrollItemExpand;
   }
 }
